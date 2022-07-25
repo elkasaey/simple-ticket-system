@@ -12,3 +12,9 @@
 ## test API
   * you can find CRUD of ticket in api/ticket   
   * you can find CRUD of reply in api/reply   
+
+## steps
+  * create model and migration file for ticket and reply
+  * create relation one to many between ticket and Reply
+  * create request and Controller for both
+  * create notifications to send mail when create
