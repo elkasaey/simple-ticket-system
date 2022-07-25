@@ -11,7 +11,7 @@ services:
         ports:
             - 8000:8000
         depends_on:
-            - mysql
+            - mysqlDB
 
     queue:
         container_name: queue
@@ -20,13 +20,13 @@ services:
             dockerfile: Dockerfile
         command: 'php artisan queue:work'
         depends_on:
-            - mysql
+            - mysqlDB
 
-    mysql:
+    mysqlDB:
         image: mysql:8.0
-        container_name: mysql
+        container_name: mysqlDB
         environment:
-            MYSQL_DATABASE: mysql
+            MYSQL_DATABASE: ticketsystem
             MYSQL_USER: root
             MYSQL_ROOT: root
             MYSQL_PASSWORD: root
